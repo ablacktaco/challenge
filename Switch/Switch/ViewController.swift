@@ -17,15 +17,24 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var backgroundColorSwitch: UILabel!
     @IBAction func backgroundColorSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            view.backgroundColor = UIColor.white
-            backgroundColorSwitch.textColor = UIColor.black
-        } else {
-            view.backgroundColor = UIColor.black
-            backgroundColorSwitch.textColor = UIColor.white
-        }
+//        if sender.isOn {
+//            view.backgroundColor = UIColor.white
+//            backgroundColorSwitch.textColor = UIColor.black
+//        } else {
+//            view.backgroundColor = UIColor.black
+//            backgroundColorSwitch.textColor = UIColor.white
+//        }
+        let bool = sender.isOn
+        backgroundColorSwitch.textColor = bool.foregroundColor
+        super.view.backgroundColor = bool.backgroundColor
     }
-    
-    
 }
 
+fileprivate extension Bool {
+    var foregroundColor: UIColor {
+        return self ? UIColor.black : UIColor.white
+    }
+    var backgroundColor: UIColor {
+        return self ? UIColor.white : UIColor.black
+    }
+}

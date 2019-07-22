@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
     @IBAction func calculateButton(_ sender: UIButton) {
         if let base1Number = Double(base1.text!), let base2Number = Double(base2.text!), let heightNumber = Double(height.text!) {
-            result.text = "\(((base1Number + base2Number) * heightNumber) / 2.0) mm2"
+            result.text = "\(((base1Number + base2Number) * heightNumber) / 2.0) mm\u{00B2}"
             result.textColor = UIColor.black
         } else {
             result.text = "Illegal Data!"
